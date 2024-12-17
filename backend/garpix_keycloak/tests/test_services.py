@@ -1,11 +1,9 @@
-import json
 import requests
 from unittest.mock import MagicMock, patch
 
 import jwt
 from django.conf import settings
 from django.test.testcases import TestCase
-from django.http.response import HttpResponse
 from django.http.request import HttpRequest
 from django.contrib.auth.models import Group
 from django.utils.http import urlencode

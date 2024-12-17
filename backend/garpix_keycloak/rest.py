@@ -35,14 +35,9 @@ class KeycloakAuthentication(TokenAuthentication):
     keyword = 'Bearer'
 
     def authenticate(self, request):
-
         token = get_token_from_request(request, keyword=self.keyword)
-
         if token is None:
             return None
 
         user = get_user_by_kk_token(token)
-
-        if user is not None:
-            return user, None
         return user, None

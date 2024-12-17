@@ -56,7 +56,7 @@ class KeycloakService:
 
         return response.json()
 
-    def get_user(self, keycloak_user, request):
+    def get_user(self, keycloak_user, request=None):
 
         User = get_user_model()
 
@@ -68,10 +68,10 @@ class KeycloakService:
 
                 ib_logger.write(action=Action.user_registration.value,
                                 obj=User.__name__,
-                                obj_address=request.path,
+                                obj_address=request.path if request else None,
                                 result=ActionResult.success,
                                 sbj=user.username,
-                                sbj_address=LoggerIso.get_client_ip(request),
+                                sbj_address=LoggerIso.get_client_ip(request) if request else None,
                                 msg=f'Создан новый пользователь {user.username}.')
 
 

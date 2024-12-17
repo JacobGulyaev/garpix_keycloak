@@ -33,5 +33,6 @@ AUTHENTICATION_BACKENDS += [
 ]
 
 ISO_LOGS_NAME = 'garpix_keycloak'
+ISO_LOGS_PRODUCT = 'garpix_keycloak_product'
 IB_ISO_LOGS_NAME = 'garpix_keycloak_ib'
 SYSTEM_ISO_LOGS_NAME = 'garpix_keycloak_system'
